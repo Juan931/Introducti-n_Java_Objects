@@ -9,7 +9,7 @@ package clases;
  *
  * @author juan
  */
-public class clsVeterinary {
+public class clsVeterinary extends AbsHospital {
     private String name;
     private String phone;
     private String address;
@@ -84,6 +84,18 @@ public class clsVeterinary {
      */
     public void setDoctor(clsDoctor doctor) {
         this.doctor = doctor;
+    }
+
+    @Override
+    public String getPatientType() {
+    
+        return "Animal";
+    }
+
+    @Override
+    public String Surgery() {
+        return "surgery animal data";
+    
     }
     
 }
