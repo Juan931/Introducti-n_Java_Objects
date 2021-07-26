@@ -5,11 +5,14 @@
  */
 package clases;
 
+import interfaces.*;
+
+
 /**
  *
  * @author juan
  */
-public class clsPet {
+ public class clsPet implements IAnimal, Ivertebrate {
    private String code;
    private String name;
    private int born_year;
@@ -131,6 +134,16 @@ public void Sound(){
      */
     public void setVeterinary(clsVeterinary veterinary) {
         this.veterinary = veterinary;
+    }
+
+    @Override
+    public String getAnimalType() {
+      return "domestico";  
+    }
+
+    @Override
+    public int getNumberofBones() {
+        return 0;
     }
    
    
