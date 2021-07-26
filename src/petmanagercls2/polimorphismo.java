@@ -28,5 +28,7 @@ public class polimorphismo {//en esta clase crearemos dos objetos igual como hic
          
         String careCat= veterinary.PetCare(cat);
         System.out.println("El estado de salud de " +cat.getName() + " es " + careCat);
+   
+       
     }
 }

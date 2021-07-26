@@ -26,6 +26,12 @@ public class clsDog extends clsPet{
     public void walk_arround(){
         System.out.println("El perro"+super.getName()+" esta paseandose.   ");
     }
+    
+    
+    @Override
+    public void Sound(){
+        System.out.println("El perro " + super.getName()+ " hace guaaaaw");
+    }
     /**
      * @return the breed
      */

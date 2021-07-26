@@ -21,9 +21,14 @@ public class clsCat extends clsPet{
     
     
     public void selfCleaning(){
-        System.out.println("El gato"+super.getName()+" se esta limpiando");
+        System.out.println("El gato" + super.getName() + " se esta limpiando");
     }
 
+    @Override
+    public void Sound(){
+        System.out.println("El gato " + super.getName() + " hace miaaaaw");
+    }    
+    
     /**
      * @return the breed
      */
