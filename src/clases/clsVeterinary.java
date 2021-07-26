@@ -25,7 +25,6 @@ public class clsVeterinary {
     
     
     
-    
     public String PetCare(clsPet pet){// Esto es el polimorfismo puro 
         System.out.println("Atendiendo a la mascota "+pet.getName());
         return pet.getHealthStatus();
