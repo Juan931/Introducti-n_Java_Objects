@@ -27,6 +27,14 @@ public class clsDog extends clsPet{
         System.out.println("El perro"+super.getName()+" esta paseandose.   ");
     }
     
+     public void walk_arround(int km){
+        System.out.println("El perro " + super.getName() + " esta caminando" +km+"km");
+    }
+    
+      public void walk_arround(boolean dogLeash){
+          String hasLeash = dogLeash ? "con correa": "sin correa";
+        System.out.println("El perro " + super.getName() + " esta caminando " + hasLeash);
+    }
     
     @Override
     public void Sound(){
