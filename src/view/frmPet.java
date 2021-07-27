@@ -5,14 +5,22 @@
  */
 package view;
 
+import clases.*;
+import java.util.LinkedList;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.SingleSelectionModel;
+
+
+
 
 /**
  *
  * @author juan
  */
 public class frmPet extends javax.swing.JFrame {
-
+    LinkedList<clsDog>dogObjectList= new LinkedList<>();
+    
     /**
      * Creates new form frmPet
      */
@@ -29,7 +37,7 @@ public class frmPet extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        petList = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
@@ -73,7 +81,7 @@ public class frmPet extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "pet1", "pet2", "pet3" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -95,7 +103,7 @@ public class frmPet extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Pet list", jPanel1);
+        petList.addTab("petList", jPanel1);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -108,7 +116,7 @@ public class frmPet extends javax.swing.JFrame {
             .addGap(0, 230, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("", jPanel3);
+        petList.addTab("", jPanel3);
 
         jLabel7.setText("Code");
 
@@ -122,9 +130,10 @@ public class frmPet extends javax.swing.JFrame {
 
         jLabel12.setText("Breed");
 
-        cbbreeddog.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "criollo" }));
+        cbbreeddog.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "criollo", "schnauser", "pincher", "german" }));
+        cbbreeddog.setToolTipText("");
 
-        cbhealthstatusdog.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "sick" }));
+        cbhealthstatusdog.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "sick", "healthy", "in surgery" }));
 
         btncreardog.setText("Crear");
         btncreardog.addActionListener(new java.awt.event.ActionListener() {
@@ -172,7 +181,7 @@ public class frmPet extends javax.swing.JFrame {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtbornyeardog, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE))
+                                .addComponent(txtbornyeardog, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(40, 40, 40)
@@ -225,7 +234,7 @@ public class frmPet extends javax.swing.JFrame {
                 .addContainerGap(49, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Dog manager", jPanel4);
+        petList.addTab("Dog manager", jPanel4);
 
         jLabel1.setText("Code");
 
@@ -315,11 +324,12 @@ public class frmPet extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(txtcolorcat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel6)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -329,7 +339,7 @@ public class frmPet extends javax.swing.JFrame {
                 .addGap(60, 60, 60))
         );
 
-        jTabbedPane1.addTab("Cat manager", jPanel2);
+        petList.addTab("Cat manager", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -337,39 +347,72 @@ public class frmPet extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1)
+                .addComponent(petList)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(27, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(petList, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
+        petList.getAccessibleContext().setAccessibleName("petList");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btneditardogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditardogActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btneditardogActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
+    private void btneditardogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditardogActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btneditardogActionPerformed
+
     private void btncreardogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncreardogActionPerformed
         //JOptionPane.showMessageDialog(this, "Esto es una prueba desde crear perro");
-       String code=txtcodeDog.getText();
-       String name=txtnameDog.getText();
-       String color=txtcolorDog.getText();
-       int bornYear=Integer.parseInt(txtbornyeardog.getText());
-       String breed=cbbreeddog.getSelectedItem().toString();
-       String healthStatus=cbhealthstatusdog.getSelectedItem().toString();
-       boolean pedigree=cbpedigreedog.isSelected();
+        try{
+           String code=txtcodeDog.getText();
+           String name=txtnameDog.getText();
+           String color=txtcolorDog.getText();
+           int bornYear=Integer.parseInt(txtbornyeardog.getText());
+           String breed=cbbreeddog.getSelectedItem().toString();
+           String healthStatus=cbhealthstatusdog.getSelectedItem().toString();
+           boolean pedigree=cbpedigreedog.isSelected();
+        
+           if (code.equals("") || name.equals("") || color.equals("")){
+              JOptionPane.showMessageDialog(this, "Fill all fields");    
+           }else{
+              clsDog dog = new clsDog(breed, pedigree, code, name, bornYear, color, healthStatus);
+              dogObjectList.add(dog);
+              this.FillJlist();
+              JOptionPane.showMessageDialog(this, "the record has been saved");
+        
+            }
+           
+       }catch(Exception e){//manejaremos las excepciones.
+            JOptionPane.showMessageDialog(this, "Please add a valid born_year");
+        }
+           
     }//GEN-LAST:event_btncreardogActionPerformed
 
+    
+    private void FillJlist(){
+        DefaultListModel model1 = new DefaultListModel();
+        int index =0;
+        
+        for (clsDog dog : dogObjectList) {
+            String data = dog.getName() + "-" + dog.getBreed() +"- Perro";
+            model1.add(index, data);
+            index++;
+        }
+      
+       petList.setModel((SingleSelectionModel) model1);
+       
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -437,7 +480,7 @@ public class frmPet extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane petList;
     private javax.swing.JTextField txtCodeCat;
     private javax.swing.JTextField txtbornyearcat;
     private javax.swing.JTextField txtbornyeardog;

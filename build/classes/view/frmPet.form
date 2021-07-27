@@ -25,7 +25,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTabbedPane1" max="32767" attributes="0"/>
+              <Component id="petList" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -34,22 +34,25 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="27" max="32767" attributes="0"/>
-              <Component id="jTabbedPane1" min="-2" pref="261" max="-2" attributes="0"/>
+              <Component id="petList" min="-2" pref="261" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+    <Container class="javax.swing.JTabbedPane" name="petList">
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="petList"/>
+      </AccessibilityProperties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Pet list">
-                <Property name="tabTitle" type="java.lang.String" value="Pet list"/>
+              <JTabbedPaneConstraints tabName="petList">
+                <Property name="tabTitle" type="java.lang.String" value="petList"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -84,12 +87,10 @@
                 <Component class="javax.swing.JList" name="jList1">
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
+                      <StringArray count="3">
+                        <StringItem index="0" value="pet1"/>
+                        <StringItem index="1" value="pet2"/>
+                        <StringItem index="2" value="pet3"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -159,7 +160,7 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtbornyeardog" pref="117" max="32767" attributes="0"/>
+                                      <Component id="txtbornyeardog" pref="88" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -271,10 +272,14 @@
             <Component class="javax.swing.JComboBox" name="cbbreeddog">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="1">
+                  <StringArray count="4">
                     <StringItem index="0" value="criollo"/>
+                    <StringItem index="1" value="schnauser"/>
+                    <StringItem index="2" value="pincher"/>
+                    <StringItem index="3" value="german"/>
                   </StringArray>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -283,8 +288,10 @@
             <Component class="javax.swing.JComboBox" name="cbhealthstatusdog">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="1">
+                  <StringArray count="3">
                     <StringItem index="0" value="sick"/>
+                    <StringItem index="1" value="healthy"/>
+                    <StringItem index="2" value="in surgery"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -404,11 +411,13 @@
                           <Component id="txtcolorcat" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel5" alignment="1" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
